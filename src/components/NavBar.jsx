@@ -5,7 +5,7 @@ function NavBar() {
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-brand">
-        Explorador de películas
+        PelisPlus
       </Link>
       <div className="navbar-links">
         {/* NavLink añade la clase "active" al enlace de la página actual */}

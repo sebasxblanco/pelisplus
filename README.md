@@ -1,7 +1,7 @@
-# Explorador de películas
+# PelisPlus
 
 Práctica de Evaluación Continua 2 de Diseño y despliegue de aplicaciones multiplataforma.
-Aplicación web con React que consume la API de [The Movie Database (TMDB)](https://developer.themoviedb.org/docs):
+PelisPlus es una aplicación web con React que consume la API de [The Movie Database (TMDB)](https://developer.themoviedb.org/docs):
 películas populares, búsqueda por título y lista de favoritos guardada en `localStorage`.
 
 ## Tecnologías
