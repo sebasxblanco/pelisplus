@@ -23,6 +23,7 @@
 
 .navbar-links {
   display: flex;
+  flex-shrink: 0; /* los enlaces nunca se recortan */
   gap: 1.5rem;
 }
 
@@ -50,5 +51,16 @@
 
   .navbar-links {
     gap: 1rem;
+  }
+}
+
+/* Móviles muy estrechos: el título más pequeño para que quepan los enlaces */
+@media (max-width: 380px) {
+  .navbar-brand {
+    font-size: 0.9rem;
+  }
+
+  .navbar-links {
+    gap: 0.75rem;
   }
 }
