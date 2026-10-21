@@ -1,16 +1,55 @@
-# React + Vite
+# Explorador de películas
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Práctica de Evaluación Continua 2 de Diseño y despliegue de aplicaciones multiplataforma.
+Aplicación web con React que consume la API de [The Movie Database (TMDB)](https://developer.themoviedb.org/docs):
+películas populares, búsqueda por título y lista de favoritos guardada en `localStorage`.
 
-Currently, two official plugins are available:
+## Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 con Vite 8
+- React Router 8 (rutas `/` y `/favorites`)
+- Context API para los favoritos
 
-## React Compiler
+## Puesta en marcha
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Instalar dependencias:
 
-## Expanding the Oxlint configuration
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+2. Crear el archivo `.env` a partir del ejemplo y poner la API Key de TMDB
+   (se obtiene gratis registrándose en https://www.themoviedb.org/):
+
+   ```bash
+   cp .env.example .env
+   # editar .env: VITE_TMDB_API_KEY=tu_api_key
+   ```
+
+   El `.env` está en `.gitignore` y no se sube al repositorio.
+
+3. Arrancar en desarrollo:
+
+   ```bash
+   npm run dev
+   ```
+
+## Estructura
+
+```
+src/
+├── App.jsx                  Rutas con React Router y provider del contexto
+├── main.jsx                 Punto de entrada
+├── index.css                Estilos globales
+├── components/
+│   ├── NavBar.jsx           Barra de navegación fija y responsive
+│   └── MovieCard.jsx        Tarjeta: póster, título, año y botón de favorito
+├── pages/
+│   ├── Home.jsx             Populares, búsqueda, carga y errores
+│   └── Favorites.jsx        Lista de favoritos o mensaje si está vacía
+├── contexts/
+│   └── MovieContext.jsx     Estado global de favoritos y hook useMovieContext
+├── services/
+│   └── api.js               Peticiones a TMDB
+└── css/                     Estilos de cada componente
+```
