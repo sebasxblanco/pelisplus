@@ -47,6 +47,11 @@
   opacity: 1;
 }
 
+/* Si la película es favorita, el corazón rojo se ve siempre, sin hover */
+.movie-card.is-favorite .movie-overlay {
+  opacity: 1;
+}
+
 /* En pantallas táctiles no hay hover: el botón se muestra siempre */
 @media (hover: none) {
   .movie-overlay {

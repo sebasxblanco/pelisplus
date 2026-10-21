@@ -15,7 +15,7 @@ function MovieCard({ movie }) {
   }
 
   return (
-    <div className="movie-card">
+    <div className={`movie-card ${favorite ? 'is-favorite' : ''}`}>
       <div className="movie-poster">
         {movie.poster_path ? (
           <img src={`${IMAGE_URL}${movie.poster_path}`} alt={movie.title} />
